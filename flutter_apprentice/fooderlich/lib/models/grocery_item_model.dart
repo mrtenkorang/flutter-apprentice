@@ -5,6 +5,8 @@ enum Importance {
   medium,
   high,
 }
+
+
 class GroceryItem {
   final String id;
   final String name;
@@ -23,25 +25,27 @@ class GroceryItem {
     required this.date,
     this.isComplete = false,
   });
+
+  GroceryItem copyWith({
+    String? id,
+    String? name,
+    Importance? importance,
+    Color? color,
+    int? quantity,
+    DateTime? date,
+    bool? isComplete,
+  }) {
+    return GroceryItem(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      importance: importance ?? this.importance,
+      color: color ?? this.color,
+      quantity: quantity ?? this.quantity,
+      date: date ?? this.date,
+      isComplete: isComplete ?? this.isComplete,
+    );
+  }
 }
-// 4
-GroceryItem copyWith(GroceryItem currentItem, {
-  String? id,
-  String? name,
-  Importance? importance,
-  Color? color,
-  int? quantity,
-  DateTime? date,
-  bool? isComplete,
-}) {
-  return GroceryItem(
-      id: id ?? currentItem.id,
-      name: name ?? currentItem.name,
-      importance: importance ?? currentItem.importance,
-      color: color ?? currentItem.color,
-      quantity: quantity ?? currentItem.quantity,
-      date: date ?? currentItem.date,
-      isComplete: isComplete ?? currentItem.isComplete);
-}
+
 
 
