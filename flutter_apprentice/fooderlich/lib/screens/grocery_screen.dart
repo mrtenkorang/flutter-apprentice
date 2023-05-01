@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:fooderlich/models/grocery_manager.dart';
 import 'package:fooderlich/screens/grocery_item_screen.dart';
